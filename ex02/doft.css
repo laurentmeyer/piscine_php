@@ -1,0 +1,16 @@
+body {
+	background-color: rgb(80,80,80);
+}
+
+.image {
+	margin: 10px;
+	border: 10px rgb(144,144,144) solid;
+	background-color: rgb(144,144,144);
+	background-image: url(resources/day_of_the_42.png);
+	background-size: contain;
+	background-position: left center; 
+	background-repeat: no-repeat;
+	border-radius: 15px;
+	box-shadow: 10px 10px 5px;
+	height:100px;
+}
