@@ -1,0 +1,19 @@
+li {
+	list-style-type:none;
+	background-color:pink;
+	display:block;
+	float:left;
+	clear:left;
+}
+
+a {
+	text-decoration:none;
+}
+
+ul ul {
+	display:none;
+}
+
+ul li:hover ul {
+	display:block;
+}

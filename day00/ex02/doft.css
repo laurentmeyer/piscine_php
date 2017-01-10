@@ -1,0 +1,110 @@
+body {
+	background-color: rgb(80,80,80);
+	position:relative;
+}
+
+.large_block {
+	background-color: rgb(144,144,144);
+	box-sizing: border-box;
+	border-radius: 10px;
+	border: 10px rgb(144,144,144) solid;
+	box-shadow: 10px 10px 5px;
+	margin-top:20px;
+}
+
+.container {
+	margin-left: 230px;
+	margin-right: 230px;
+}
+
+.title_image {
+	background-image: url(resources/day_of_the_42.png);
+	background-size: contain;
+	background-position: left center; 
+	background-repeat: no-repeat;
+	width: 1420px;
+	height:130px;
+	position:relative;
+	margin-bottom:10px;
+}
+
+.main_body {
+	position:relative;
+}
+
+.action_menu {
+	position:absolute;
+	top:0;
+	left:30px;
+	width:140px;
+	height:450px;
+}
+
+.action_menu .icon {
+	width: 70px;
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.main_image {
+	content: url(resources/cluster.jpg);
+	position:absolute;
+	top:0;
+	left:210px;
+	width:1000px;
+	height:560px;
+}
+
+.items_menu {
+	position:absolute;
+	top:0;
+	left:1250px;
+	width:140px;
+	height:450px;
+}
+
+.items_menu .icon {
+	max-height: 90px;
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+ }
+
+ .text_input {
+	 position:absolute;
+	 top:700px;
+	 left:200px;
+	margin-top:-50px;
+	border-radius: 10px;
+	background: rgb(140, 253, 142);
+	box-shadow: 10px 10px 5px;
+	padding:10px 20px 50px;
+	width: 500px;
+	height: 100px;
+}
+
+#magnifier {
+	content: url(resources/loupe.png);
+	position:absolute;
+	top:0;
+	right:20px;
+}
+
+#reload {
+	content: url(resources/reload.png);
+	position:absolute;
+	top:0;
+	right:0;
+	width:20px;
+	height:20px;
+}
+
+#close {
+	content: url(resources/close.gif);
+	position:absolute;
+	bottom:0;
+	right:0;
+	width:20px;
+	height:20px;
+}
