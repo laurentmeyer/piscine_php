@@ -1,6 +1,8 @@
 #!/usr/bin/php
 <?php
 
-$i = 0;
-while (++$i < $argc)
-	echo "$argv[$i]\n";
+array_shift($argv);
+foreach ($argv as $argument)
+	echo "$argument\n";
+
+?>

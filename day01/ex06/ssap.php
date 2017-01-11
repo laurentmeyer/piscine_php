@@ -10,9 +10,7 @@ function ft_split($str)
 
 array_shift($argv);
 if (!empty($argv))
-{
-	array_map(
-		function ($s) {
-			echo "$s\n";
-		}, ft_split(implode(" ", $argv)));
-}
+	foreach(ft_split(implode(" ", $argv)) as $elem)
+			echo "$elem\n";
+
+?>

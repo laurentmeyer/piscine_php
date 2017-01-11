@@ -6,3 +6,5 @@ function ft_split($str)
 	sort($array);
 	return $array;
 }
+
+?>

@@ -12,3 +12,5 @@ while ($entry = fgets(STDIN))
 	echo "Entrez un nombre: ";
 }
 echo "\n";
+
+?>

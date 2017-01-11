@@ -1,7 +1,8 @@
 #!/usr/bin/php
 <?php 
 
-$i = 0;
-while ($i++ < 1000)
-    echo "X";
+foreach (range(1, 1000) as $i)
+	echo "X";
 echo "\n";
+
+?>

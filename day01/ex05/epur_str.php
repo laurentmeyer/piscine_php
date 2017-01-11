@@ -1,10 +1,10 @@
 #!/usr/bin/php
 <?php
 
-if ($str = $argv[1])
+if ($argc == 2)
 {
-	$str = preg_replace("/^ */", "", $str);
-	$str = preg_replace("/ +/", " ", $str);
-	$str = preg_replace("/ *$/", "", $str);
+	$str = preg_replace("/ +/", " ", trim($argv[1]));
 	echo "$str\n";
 }
+
+?>
