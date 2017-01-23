@@ -1,0 +1,123 @@
+Les fonctionnalites de jeu
+Gestion de compte
+
+Il est possible de creer un compte et de se loguer dessus. 
+Le compte contient le profil du joueur ainsi que ses performances au combat. 
+Les joueurs sont classes entre eux et on peut consulter cette information.
+
+ Yes
+No
+Gestion des parties
+
+Il est possible de creer une partie en mode melee ou en mode equipe. De plus, une partie ne peut pas exceder 4 joueurs. 
+Il n'y a pas de limite au nombre de parties en simultane. 
+Il est possible de creer sa flotte en ayant rejoint/cree une partie. 
+ Yes
+No
+Lobby
+
+Il exister un lobby où les joueurs peuvent chatter. 
+Il est possible de creer et de rejoindre des parties depuis le lobby. 
+ Yes
+No
+Gameplay
+Zone de jeu
+
+• La zone de jeu est une grille de 150 cases par 100 cases. 
+• Les deux flottes ennemies commencent dans deux coins opposés et tous les vaisseaux sont immobiles. 
+• Il doit y avoir quelques obstacles. 
+• Un vaisseau qui sort de la zone de jeu ou qui heurte un obstacle pour une raison ou une autre est éliminé.
+
+ Yes
+No
+Le tour
+
+• À chaque tour, les joueurs jouent un de leurs vaisseaux à tour de rôle jusqu’à ce que tous les vaisseaux aient été joués. 
+
+• Un vaisseau actif doit réaliser trois phases obligatoirement dans cet ordre 
+◦ La phase d’ordres 
+◦ La phase de mouvement 
+◦ La phase de tir 
+
+• Une fois que tous les vaisseaux des deux joueurs ont été activés, un nouveau tour débute.
+
+ Yes
+No
+Les vaisseaux
+
+Les vaisseaux ont les caractéristiques suivantes : 
+
+- Nom 
+- Taille 
+- Points de coque 
+- PP 
+- Vitesse 
+- Manœuvrabilité 
+- Boucliers 
+- Armes 
+ Yes
+No
+Les armes
+
+Toutes les armes possèdent un profil défini de la façon suivante : 
+
+- Charges : Chaque PP dépensé sur cette arme ce tour ajoute un point de charge. 
+- Portée courte : Nombre de cases où l’arme est à courte portée. 
+- Portée intermédiaire : Nombre de cases où l’arme est à moyenne portée. 
+- Portée longue : Nombre de cases où l’arme est à longue portée. Également distance maximum pour laquelle l’arme est utilisable. 
+- Zone d’effet : Description des cases sur lesquelles l’arme peut tirer. 
+ Yes
+No
+Phase d'ordre
+
+• Au début de cette phase, tous les PP dépensés au tour précédent sont remis à zéro. C’est à dire que les systèmes d’armes, de bouclier et la vitesse reprennent leur valeurs initiales. 
+
+Le joueur dépense alors les PP du vaisseau sur l’un ou l’autre des système de son vaisseau selon la situation. Il peut dépenser tous ses points, une partie ou aucun. 
+
+• 1PP dépensé pour la vitesse permet d’avancer d’1D6 cases supplémentaires. 
+• 1PP dépensé pour les bouclier donne 1 point de bouclier. 
+• 1PP dépensé pour une arme donne 1D6 supplémentaire pour tirer avec cette arme. 
+
+Le joueur peut également dépenser des points de puissance pour réparer son vaisseau. 
+Pour réparer un vaisseau, le vaisseau doit d’abord être immobile. Chaque PP dépensé 
+en réparations permet de lancer 1D6. Sur un 6, un point de coque est restauré jusqu’au 
+maximum de la valeur de points de coque de départ.
+
+ Yes
+No
+Phase de mouvement
+
+Pendant cette phase, un vaisseau peut se déplacer. 
+
+• Le vaisseau pivotera sur la case située le plus au milieu possible des cases qui composent le vaisseau. 
+• Un vaisseau immobile peut effectuer un virage gratuit avant de commencer à se déplacer. 
+• Un vaisseau ne peut se déplacer que d’un nombre de cases correspondant à sa caractéristique vitesse (plus les PP dépensés en vitesse ce tour) au maximum. 
+• Un vaisseau doit toujours se déplacer d’un nombre de cases supérieur ou égal à sa caractéristique manoeuvre. 
+• Si un vaisseau s’est déplacé d’exactement le nombre de cases correspondant à sa caractéristique manoeuvre au tour précédent, le vaisseau peut rester immobile ce tour. 
+• Un vaisseau immobile peut se déplacer d’un nombre de cases inférieur à sa caractéristique manoeuvre. C’est le seul cas ou il est possible se déplacer de moins de cases que sa caractéristique manoeuvre. S’il le fait, le vaisseau ne sera plus considéré comme immobile au tour suivant. 
+• Un vaisseau peut effectuer un virage à chaque fois qu’il a parcouru un nombre de cases supérieur ou égal à sa caractéristique manoeuvre. 
+• Eperonage 
+ Yes
+No
+Phase de tir
+
+• Pour tirer, le vaisseau doit avoir une ligne de vue sur sa cible. Tout vaisseau ou obstacle bloque les lignes de vue. Pour avoir une ligne de vue, on pourrait tracer une ligne entre le tireur et sa cible sans rien croiser. 
+
+• Si le tireur a une ligne de vue sur sa cible, le vaisseau lance un nombre de dés égal au nombre de points de charge que possède l’arme. Bien entendu, la cible doit se trouver à portée de l’arme et dans sa zone d’effet. 
+
+• Les dés obtenant au moins une certaine valeur comptent comme un "succès". Les valeurs de base à obtenir pour provoquer un succès sont les suivantes : 
+- Portée courte : 4+ 
+- Portée intermédiaire : 5+ 
+- Portée longue : 6 
+
+• Chaque succès provoque un point de dégat à sa ou ses cibles. Les points de dégats sont d’abords retranchés au bouclier de la cible puis à ses points de coque. 
+
+• Chaque arme ne peut tirer qu’une seule fois par tour. Bien entendu, un vaisseau peut décider de ne pas tirer. 
+
+• Un tir qui atteint sa cible par l’avant ou par l’arrière provoque un "tir en enfilade". 
+ Yes
+No
+Bonus
+On peut faire plein de bonus.
+
+Si en plus le jeu propose divers bonus qui restent dans l'esprit (par exemple plusieurs scenarii), alors ca fait des points de bonus.

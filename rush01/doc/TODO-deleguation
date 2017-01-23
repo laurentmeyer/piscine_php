@@ -1,0 +1,17 @@
+- [PIERRE] faire un side-menu autour du canvas dans /public/index.php
+- integrer le chat du lobby a coté du canvas. (je m'occuperai de le faire disparaitre apres le lobby)
+  
+
+
+(Laurent)
+Hello a tous, on a fait une nuit blanche, on rentre dormir qques heures pour avoir un cerveau fonctionnel.
+On est sur la bonne voie et j'ai besoin de deux choses sur lesquelles vous pouvez m'aider :
+- déjà ce serait  bien de lire les classes et les routes, desolé c'est obscur et sale mais ca aidera pendant la journée de demain puis la soutenance.
+- apres reflexion j'ai besoin d'une vraie classe weapon pour pouvoir les stocker dans les vaisseaux. Du coup il faudrait pouvoir les construire comme un battleship par exemple
+- il faut finir la classe Presets, elle est super importante car c'est elle qui recoit les caractéristiques d'une partie (logins, factions, type de partie, taille de flotte) et cree une partie. 
+Pour aider il ya un fichier game_init quie cree une partie toute perrave mais ca donne l'idée.
+Hésitez pas a m'appeler si besoin 06.58.25.00.01, je repondrai si je suis debout, je suis pas cher.
+
+A toute j'essaie de revenir vers 13h
+
+@alexis: j'ai bricolé un serializer donc ne t'inquiete pas.

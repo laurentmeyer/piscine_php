@@ -1,0 +1,26 @@
+< Weapon -----------------------------------------------------------------------
+Class Weapon define a weapon with the following statistics:
+    name          - Name of the weapon
+    charges       - Number of base charges on the weapon 
+    shortRange    - Short Range efficiency
+    mediumRange   - Medium Range efficiency
+    longRange     - Long Range efficiency
+    shape         - Shape that the shot take
+    
+The class provide the following methods:
+__construct (array)
+    array must contain the following values:
+    *   String 'name'
+    *   String 'shape' ("line", "oval", "trapez" or "circle")
+    *   int 'sr', 'mr', 'lr' as values of ShortRange MediumRange and LongRange respectively
+    *   int 'charges'
+    
+generateShot(int $PP)
+    take the number of PP attributed to the weapon
+    return an array as such
+    {
+    'shape' => String  -- Shape of the shot
+    'range' => Int     -- Efficient Range of the shot
+    }
+     
+----------------------------------------------------------------------- Weapon >

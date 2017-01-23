@@ -1,0 +1,21 @@
+Preliminaires
+On verifie la base de la base
+
+Est éliminatoire (0 au rush, fin de la notation) : 
+- pas de fichier auteur si le sujet en demande un. 
+- Le rendu n'est pas en PHP cote serveur (hors sujet) 
+- Le rendu doit fonctionner sous Chrome dans sa version installee sur le dump. 
+- Si la mise en place de la soutenance prend un temps anormal a cause de l'installation et la configuration de dependances, vous restez seul juge de mettre 0. 
+- Avoir une méthode ou un attribut en public sans raison. Si le corrigé justifie ce choix mais que vous n’êtes pas convaincu, vous restez seul juge de mettre 0. 
+- Si a un moment dans une relation d'heritage ("extends") on ne peut pas dire qu'une classe fille "est" une classe mere, vous restez seul juge de mettre 0. 
+- Ne pas respecter l'une de ces consignes : 
+• Une seule et unique classe par fichier. 
+• Un fichier qui contient la définition d’une classe ne doit rien contenir d’autre, à part des require ou require_once quand c’est nécessaire. 
+• Un fichier contenant une classe doit TOUJOURS être nommé sous la forme ClassName.class.php. 
+• Une classe doit TOUJOURS être accompagnée d’un fichier de documentation dont le nom doit TOUJOURS être de la forme ClassName.doc.txt. 
+• La documentation d’une classe doit TOUJOURS être utile et correspondre à l’implémentation. 
+• Une classe doit TOUJOURS proposer une méthode statique doc renvoyant le contenu du fichier de documentation associé à une classe sous forme d’une chaine de caractères. 
+
+
+N'est pas éliminatoire : 
+- Modifier certains paramètres du jeu tant qu’ils ne dénaturent pas les règles et l’univers de Warhammer 40000.

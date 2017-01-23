@@ -1,0 +1,14 @@
+< Shipyard ---------------------------------------------------------------------
+class Shipyard create a constructeur capable to reproduce pressets ships
+
+new Shipyard(Forge $forge)
+
+it provides the following methods:
+
+public addBluePrint($kwargs)
+    create a blue print of the provided ships (see class Battleship for the
+    needed args)
+
+public buildShip($name)
+    create a new instance of Battleship associated at $name.
+--------------------------------------------------------------------- Shipyard >

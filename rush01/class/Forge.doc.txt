@@ -1,0 +1,16 @@
+< Forge ------------------------------------------------------------------------
+The Class Forge contains an array of class Weapons and belong
+to a unique faction
+
+new Forge($faction_name);
+
+it provides the following methods:
+    
+function addWeaponInventory($kwargs)
+    $kwargs must contains the mandatories informations to create a Weapon class.
+    
+function forgeWeapon($name)
+    return a new instance of the class Weapon with the characteristics 
+    associated with $name
+    return False on a missmatch.
+------------------------------------------------------------------------ Forge >

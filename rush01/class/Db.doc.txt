@@ -1,0 +1,36 @@
+< Db -------------------------------------------------------------------------
+
+Intro:
+The DB class is here to provide access to the database
+
+Attributes:
+Class Db providing the following private static attributes:
+    private static $name        - Database Name
+    private static $user        - Database User login
+    private static $pass        - Database User pass
+    private static $addr        - Database Address
+    private static $port        - Database Port Connection
+
+
+Methods:
+Class Db doesn't have __construct() nor __destruct.
+However, it does have the following public static methods:
+    public static function co()
+    - Connection to the database, sending back a pdo object if everything is ok,
+    else it will send back the Error as a message.
+
+    public static function elo(User $user1, User $user2, $r1, $r2)
+    - Calculate the ELO change between the $user1 and $user2
+    $r1 and $r2 are respectively the outcome of the game for $user1 et $user2
+    The values for $r1 and $r2 MUST BE as this -> Win = 1 | Tie = 0.5 | Lose = 0
+    The function does the calculating and update the info into the database.
+    
+    public static function getClassement()
+    - Get the login, play_total, play_win, play_lost and elo of all the players
+    ordered by elo. Returns an array with all those informations.
+    
+    public static function getChat()
+    - Get the last 50 messages of the tchat with the login and the message.
+    All is stored into an array which is returned.
+    
+--------------------------------------------------------------------------- Db >

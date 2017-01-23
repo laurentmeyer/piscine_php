@@ -1,0 +1,87 @@
+//-------------------------CLIENT----------------------------
+
+
+GET /index.php
+#renvoie la page principale contenant le visuel jeu/chat/etc
+
+
+ANY /api/index.php
+#renvoie juste hello pour test
+
+//-------------------------CHAT----------------------------
+
+POST /api/chat/message.php
+#si on POST un message dessus, il l'ajoute dans "la DB"
+#(le js se chargera de pull les nouveaux messages avec l'autre route)
+
+GET /api/chat/message.php
+#renvoie les derniers messages du chat.
+
+//-------------------------GAME----------------------------
+
+GET /api/game/lobby.php
+# renvoie juste une liste des noms de lobby en attente de joueurs
+# cette liste contient le type du lobby.
+
+POST /api/game/lobby.php
+# on post le nom du lobby choisi et ducoup associe notre session a la session de l'autre.
+# OU
+# si le nom existe pas on creer un lobby de ce nom.
+# pour du FFA le nombre de joueurs doit etre 4
+# curl --data "action=create&type=FFA&max_players=4" https://war-neolectron.c9users.io/api/lobby/lobby.php
+# curl --data "action=join&lobby=0" https://war-neolectron.c9users.io/api/lobby/lobby.php
+
+POST /api/game/activate.php
+# 
+
+//old
+
+POST /api/game/new_game.php
+#on post les data de la nouvelle partie :
+#array de joueurs avec :
+# - pseudo
+# - faction
+# - preset de flotte
+# - si equipe, numero de team
+#détails de la partie :
+# - FFA ou equipe
+#renvoie les data (position asteroids, vaisseaux etc)
+
+POST /api/game/move.php
+#on post les data de chaque mouvement
+#pas de valeur de retour
+
+GET /api/game/board.php
+#retourne l'ensemble des objets serialises
+
+POST /api/shot/shot.php
+#on post les valeurs suivantes :
+#json avec:
+# name  - nom de l'arme
+# pp    - nombre de pp attribués au tir
+#renvoie un json avec :
+# shape - nom de la forme du tir
+# range - portée effective du tir
+
+//-------------------------USER---------------------------
+
+POST /api/user/login.php            [DONE]
+#on post le user:password           [DONE]
+#ca renvoie le user_id si OK        [DONE]
+#ca renvoie 0 sinon                 [DONE]
+
+POST /api/user/logout.php           [DONE]
+#logout le user courant             [DONE]
+
+POST /api/user/register.php         [DONE]
+#on post user:password              [DONE]
+#ca renvoie user_id si ok, 0 sinon  [DONE]
+
+GET /api/user/classement.php        [DONE]
+
+
+//-------------------------SHOT---------------------------
+
+//-------------------------CHAT---------------------------
+POST /api/chat/speak.php            [DONE]
+GET /api/chat/chat.php              [DONE]

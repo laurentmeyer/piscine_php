@@ -1,0 +1,26 @@
+< Player ----------------------------------------------------------------------
+
+Class Player defines a player with the following attributes
+
+-name
+-team
+-faction
+
+methods
+
+-public function attribute_battleship(Battleship $bs)
+-public function setBoard(Board $board)
+-public function setTeam($nb)
+-public function getTeam()
+-public function getState()
+-public function setState($state)
+-public function setFleet(array $fleet)
+-public function getBoard()
+-public function getPlayername()
+-public function getBattleships()
+-public function getUnactivatedBattleships()
+-public function destroyBattleship(Battleship $bs)
+-public function arrayify()
+-public static function doc()
+
+---------------------------------------------------------------------- Player >

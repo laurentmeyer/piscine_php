@@ -1,0 +1,39 @@
+< BOARD -------------------------------------------------------------------------
+
+Intro:
+The BOARD class is here to rule all the motherfuckin' game. One board per game
+
+Attributes:
+FIGURE IT OUT NOOB
+    const LINES = 100;              - x tiles
+    const COLUMNS = 150;            - y tiles
+    public static $verbose = false; - verbose style
+    private $_players = array();    - all the players in this game
+    private $_obstacles = array();  - all the obstacles
+    private $_currentTurn;          - The turns
+    private $_lastTeam;             - Last team which played
+    private $_lastPlayer = array(); - Last player, serves to figure out whoseTurn it is
+    private $_dead = array();       - ALL THE GAME DEAAAAAADs (for ELO rating)
+    private $_currentActivation;    - Whose activated
+
+
+
+Methods:
+Class BOARD
+    public function whoseTurn()             - Figure out whose turns it is
+    private function endgame($winner)       - calculate elo
+    private function _newTurn ()            - activate ships
+    public function setActivation(Activation $activation)   - activate all kind of stuff
+    public function getActivation()                         - get it
+    private function _current_board()                       - which board?
+    public function get_board_state()                       - get the board state
+    private function _current_board_except(Battleship $bs)  - Battleship and stuff
+    public function attribute_player(Player $player)        - Where are our players?
+    public function attribute_obstacle(Obstacle $obstacle)  - Where are the obstacles
+    public function try_move(Battleship $bs, array $newpos) - Trying to move
+    private function _getPlayers()                          - get all the players as an array !
+    private function _setPlayers($players)                  - set the array _players
+    private function active_ships()                         - CAPTAIN ACTIVATE ALL THE SHIPS
+    public function arrayify()                              - Arrayify shit ?
+    
+--------------------------------------------------------------------------- BOARD >

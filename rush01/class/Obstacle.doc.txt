@@ -1,0 +1,11 @@
+< Obstacle -------------------------------------------------------------------
+
+Intro:
+Genere les obstacles;
+
+Methods:
+    public function arrayify();
+    public function __construct(array $kwargs);
+    public static function doc();
+    
+--------------------------------------------------------------------- Obstacle >

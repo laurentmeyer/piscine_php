@@ -1,0 +1,33 @@
+< Activation -------------------------------------------------------------------
+
+Intro:
+The class handles the turn logic.
+
+Constants:
+The class has constants to receive events :
+    ORDER => phase of orders in a game turn;
+    MOVEMENT => phase of battleship movement in a game turn;
+    FIRE => phase of shooting in a game turn;
+    AHEAD => the ship advances one square;
+    TURNLEFT => the ship rotates once on the left side;
+    TURNRIGHT => the ship rotates once on the right side;
+    STOP => the player does not wish to move further;
+
+Getters and setters :
+There are setters and getters for : 
+- phase;
+- battleship;
+- potential;
+- totalShield;
+- weaponDices;
+- inertia;
+- moved;
+- last_pivot;
+- repairDices;
+
+Methods:
+attribute_pp : takes as an array a repartition of Power Point
+listPossibleActions : returns an array of all possible actions for the current
+player.
+    
+------------------------------------------------------------------- Activation >

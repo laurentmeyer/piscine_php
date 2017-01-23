@@ -1,0 +1,16 @@
+< Fleet-------------------------------------------------------------------------
+
+Intro:
+Genere une flotte via la class forge et la class shipyard.
+
+Attributes:
+    no attribut public;
+
+
+Methods:
+    __construct(array $kwarg);
+    addFleet($kwarg);
+    makeDaFleetGreatAgain($name, $faction);
+
+    
+------------------------------------------------------------------------ Fleet >

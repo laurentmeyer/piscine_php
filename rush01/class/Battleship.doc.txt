@@ -1,0 +1,38 @@
+< Battleship -------------------------------------------------------------------
+
+Intro:
+The class handles the Battleship properties and actions.
+
+Constants:
+The class has constants to receive events :
+    MOVE => the board accepted the move.
+    DESTRUCTION => the board refuses the move, ship is destructed.
+    COLLISION => the board refuses the move, ship is stops and absorbs damage.
+
+Getters and setters :
+There are setters and getters for : 
+- name;
+- player;
+- activated;
+- direction;
+- pp;
+- hp;
+- speed;
+- manoeuvre;
+- shield;
+- weapons;
+- idle;
+
+Methods:
+     move_ahead : the battleship tries a move of one square ahead.
+     rotate : it tries to make a turn on the side of the passed parameter.
+     arrayify : turns the class and its dependencies in an array.
+	 initiatePosition : instanciates the position.
+	 
+	 
+Instanciation example :
+new Battleship ( array ( 'horizontal' => 5, 'vertical' => 1, 'originx' => 50,
+                'originy' => 20, 'direction' => "E" , 'weapons' => $s2) )
+
+    
+------------------------------------------------------------------- Battleship >

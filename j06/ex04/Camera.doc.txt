@@ -1,0 +1,31 @@
+<- Camera ---------------------------------------------------------------------
+The Camera class handles Camera transformations.
+
+An instance is constructed from the list of the following arguments:
+'origin'
+'orientation'
+['width' AND 'height'] OR 'ratio'
+'fov'
+'near'
+'far'
+
+ex :
+$vtxO = new Vertex( array( 'x' => 20.0, 'y' => 20.0, 'z' => 80.0 ) );
+$R    = new Matrix( array( 'preset' => Matrix::RY, 'angle' => M_PI ) );
+$cam  = new Camera( array( 'origin' => $vtxO,
+			'orientation' => $R,
+			'width' => 640,
+			'height' => 480,
+			'fov' => 60,
+			'near' => 1.0,
+			'far' => 100.0) );
+
+Any other use is undefined behaviour.
+
+The class provides the following methods :
+
+watchVertex( Vertex $worldVertex )
+Returns a Vertex with the coordinates in the Screen View of the Vertex with the
+coordinates of the World coordinates.
+
+--------------------------------------------------------------------- Camera ->

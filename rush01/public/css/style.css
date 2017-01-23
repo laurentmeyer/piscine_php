@@ -1,0 +1,249 @@
+@font-face {
+    font-family: WarFont;
+    src: url(/public/font/IMFeENsc28P.ttf);
+}
+
+body{
+    margin:0;
+    background-color:black;
+    font-family: WarFont;
+    color:white;
+    background-image: url(/public/img/stars.jpg);
+    background-size: 1600px 1500px;
+}
+
+.shadow
+{
+    text-shadow:2px 3px darkred;
+}
+.menu_cont
+{
+    position:relative;
+    display:inline-flex;
+    width:2540px;
+    height:150px;
+    background-image: url(/public/img/menu-bg-03.png);
+    background-size: 2540px 170px;
+}
+.turns
+{
+    margin-top:2px;
+    margin-bottom:2px;
+    padding-top:55px;
+    height: 150px;
+    background-image: url(/public/img/panel_login.png);
+    background-size: cover;
+}
+
+.turn_butt
+{
+    padding-top:25px;
+    width:415px;
+    height:210px;
+}
+.opacity
+{
+    opacity:0.4;
+    color:red;
+}
+
+/*.opacity:hover*/
+/*{*/
+/*    opacity:1;*/
+/*    transition:all 0.5s linear 0.1s;*/
+/*    color:white;*/
+/*}*/
+.opacity_your
+{
+    opacity:1;
+    transition:all 0.5s linear 0.1s;
+    color:white;
+}
+.bubon
+{
+    opacity:0.6;
+    text-align:center;
+    margin:0;
+}
+
+.menu_left
+{
+    position:relative;
+    width:500px;
+    height:inherit;
+    margin-left:0px;
+}
+.menu_center
+{
+    position:relative;
+    width:1500px;
+}
+.logo
+{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    max-height:150px;
+}
+.menu_right
+{
+    position:relative;
+    width:500px;
+    height:inherit;
+    margin-right:0px;
+    text-align:right;
+    vertical-align:middle;
+    background-image:url(/public/img/login_final.png);
+    background-size:cover;
+}
+.user_connect
+{
+    padding-right:85px;
+    padding-top:10px;
+}
+.central_block
+{
+    display: -webkit-inline-box;
+}
+.background
+{
+    background:transparent;
+}
+
+.left_sb
+{
+    font-family:WarFont;
+    width:415px;
+    height:92vh;
+    align-items: center;
+}
+
+.right_sb
+{
+    position:absolute;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    width:625px;
+    height:92vh;
+}
+
+
+.cv_cont
+{
+    width:1500px;
+    height:92vh;
+    background-color:black;
+}
+
+.chat
+{
+    overflow: auto;
+    border-radius:5px;
+    position:relative;
+    margin-left:15px;
+    height:850px;
+    width:500px;
+    background-color:#640103;
+    color:white;
+    text-shadow:solid black;
+    border-width:3px;
+    border-style: solid;
+    border-color:#bf8e31;
+}
+.chat>*
+{
+    text-shadow:4px 3px black;
+}
+
+.chat-list
+{
+    list-style-type: none;
+}
+.send
+{
+    position:relative;
+    margin-left:15px;
+    width:490px;
+}
+.send_butt
+{
+    margin-top:15px;
+    margin-left:4px;
+    height:40px;
+    background-color: Goldenrod;
+    width:493px;
+    font-family:WarFont;
+    font-size:20px;
+    border-radius:5px;
+}
+.send_butt:hover
+{
+    transition: all 0.2s linear 0.1s;
+    transform: scale(1,1.4);
+}
+
+.infos
+{
+    text-align:right;
+    margin-right:20px;
+}
+.info_field
+{
+    margin-top:10px;
+    height:20px;
+    width:275px;
+
+}
+.filler
+{
+    margin-top:25px;
+    height:140px;
+}
+
+.actions
+{
+    left:10px;
+    display: inline;
+    width:180px;
+    text-align:center;
+}
+.acti_ship
+{
+    margin-left:25px;
+    width:320px;
+    height:75px;
+}
+
+.butt
+{
+    margin-top:5px;
+    max-height:30px;
+    width:120px;
+}
+
+.label_butt
+{
+    position:absolute;
+    height:20px;
+    width:120px;
+    right:33px;
+}
+
+.fake_cv
+{
+    width:1500px;
+    height:1000px;
+    background-color:darkcyan;
+}
+#msg
+{
+    border-radius:5px;
+    margin-top:10px;
+    height:22px;
+    width:493px;
+}
+.bob
+{
+    width: 2560px;
+}

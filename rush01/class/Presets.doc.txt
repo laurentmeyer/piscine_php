@@ -1,0 +1,15 @@
+< Presets ----------------------------------------------------------------------
+Class Presets defines a fleet it has the followin' attributes
+    public static $verbose = False;     - writes things
+    private $_players = array();
+    private $_fleet_size;
+    private $_max_players;
+    private $_fleetBuilder;
+    private $_board;                    - the board
+
+methods
+
+private function _initiateFleetPosition($key) - Initiate fleet !
+function getBoard()                             - Get the board.
+
+---------------------------------------------------------------------- Presets >

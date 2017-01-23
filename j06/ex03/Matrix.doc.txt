@@ -1,0 +1,28 @@
+<- Matrix ---------------------------------------------------------------------
+The Matrix class handles 4x4 matrices.
+
+An instance is constructed from one of the following presets, passed in the
+mandatory 'preset' attribute:
+IDENTITY : returns an identity matrix, no extra attributes.
+SCALE : returns a scaling matrix, requires a 'scale' attribute.
+RX : returns a X axis rotation matrix, requires an 'angle' attribute.
+RY : returns a Y axis rotation matrix, requires an 'angle' attribute.
+RZ : returns a Z axis rotation matrix, requires an 'angle' attribute.
+TRANSLATION : returns a translation matrix, requires a 'vtc' Vector attribute.
+PROJECTION  returns a projection matrix, requires the following attributes:
+'fov', 'ratio', 'near', 'far'.
+
+ex :
+new Matrix ( array ( 'preset' => Matrix::IDENTITY ) );
+
+Any other use is undefined behaviour.
+
+The class provides the following methods :
+
+Matrix mult( Matrix $rhs ) :
+Returns a new Matrix, resulting from the multiplication of the two matrices.
+
+Vertex transformVertex( Vertex $vtx ) :
+Returns a new Vertex, resulting from the product by the Matrix.
+
+--------------------------------------------------------------------- Matrix ->

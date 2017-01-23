@@ -1,0 +1,22 @@
+< User -------------------------------------------------------------------------
+Class USER providing the following private attributes:
+    private $_id        - User's id
+    private $_login     - User's login
+    private $_passwd    - User's passwd
+    private $_playtotal - User's total battle played
+    private $_playlost  - User's total of games lost
+    private $_playwin   - User's total of games win
+    private $_elo       - User's elo
+
+the class is constructed with an array containing the following :
+    'login', 'passwd',
+    'register' -- 
+    
+the Class USER provide the following public methods
+    connect_user()
+    delog_user()
+    send_message($message)
+    get($att)
+    set($att, $value)
+    
+------------------------------------------------------------------------- User >

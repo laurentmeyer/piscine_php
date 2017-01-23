@@ -1,0 +1,19 @@
+< Piece -------------------------------------------------------------------
+
+Intro:
+Sert de model pour generer les vaisseaux et les obstacles sur la map.
+
+Attributes:
+    const BUSY = 1;
+
+    protected $_vertical;
+    protected $_horizontal;
+    protected $_originx;
+    protected $_originy;
+
+Methods:
+    public function current_position();
+    public function __toString();
+    public static function doc();
+    
+--------------------------------------------------------------------- Piece >
