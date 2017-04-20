@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Le ballon le ballon</title>
+	</head>
+	<body>
+		<div id="balloon"></div>
+		<script>
+var elt;
+var radius;
+var color;
+var colorArray = ["red", "green", "blue"];
+
+function refresh_balloon (e, r, c) {
+	e.style.height = 2 * r + 'px';
+	e.style.width = 2 * r + 'px';
+	e.style.borderRadius = r + 'px';
+	e.style.backgroundColor = colorArray[c];
+}
+
+radius = 100;
+color = 0;
+elt = document.getElementById('balloon');
+refresh_balloon(elt, radius, color);
+
+elt.onmouseleave = function () {
+	if (radius > 100)
+		radius -= 2.5;
+	color = (color == 0) ? colorArray.length - 1 : color - 1;
+	refresh_balloon(elt, radius, color);
+};
+
+elt.onclick = function () {
+	radius = (2 * radius > 420) ? 100 : radius + 5;
+	color = (color == colorArray.length - 1) ? 0 : color + 1;
+	refresh_balloon(elt, radius, color);
+};
+		</script>
+	</body>
+</html>

@@ -1,103 +1,51 @@
 <?php
 
-$host_name = "localhost";
-$dbname = "rushDB";
-$username = "username";
-$password = "password";
+ini_set('display_errors', 1);
+date_default_timezone_set("Europe/Paris");
 
-include("db_init.php");
+//rename('./docs', '/docs');
 
-db_destroy_db();
-db_init();
-db_create_tables();
+function csv_to_array( $filename )
+{
+	$ret = array();
+	$fd = fopen($filename, "r");
+	$headers = fgetcsv($fd);
+	while (($entry = fgetcsv($fd)) !== FALSE)
+	{
+		$temp = array();
+		foreach ($entry as $key => $value)
+			$temp[$headers[$key]] = $value;
+		$ret[] = $temp;
+	}
+	fclose($fd);
+	return ($ret);
+}
 
-include("db_inserts.php");
-include("db_selects.php");
-include("db_describes.php");
-include("db_updates.php");
-insert_user("admin", "root");
-update_user(select_user_id("admin"), "admin", "root", "1");
-insert_user("coucou", "bouzin");
-insert_user("didier", "super");
-insert_user("toto", "toto");
-insert_category("Tout");
-insert_category("Maison");
-insert_category("Enfant");
-insert_category("Jardin");
-insert_product("Chaise", "img/chaise.png", "12.50", "Ceci est une super belle chaise de designer. Elle est belle.");
-insert_product("Enfant", "img/enfant.png", "42", "Ceci est un enfant à usage multiple. Attention, peut pleurer.");
-insert_product("Allumette", "http://ekladata.com/Q7Fg10Q0xsJaCq62yPP1a8AoVQE.png", "0.01", "Cette allumette à usage unique vous servira une fois au mieux");
-insert_product("Canard", "img/canard.png", "8.3", "Ce canard est un canard vivant. Il flotte mais ne coule pas");
-insert_product("Chevalier qui dit ni", "img/knight.png", "14990", "Ce chavalier dit aussi eki eki pa tong, mais seulement dans les jardinets");
-link_product_category("Chaise", "Jardin");
-link_product_category("Chaise", "Maison");
-link_product_category("Chaise", "Enfant");
-link_product_category("Chevalier qui dit ni", "Enfant");
-link_product_category("Canard", "Enfant");
-link_product_category("Allumette", "Enfant");
-link_product_category("Allumette", "Maison");
-link_product_category("Canard", "Jardin");
+$files = array('categories', 'categories_products', 'products', 'users', 'orders');
 
+array_map(function ($table) {
+	$docpath = dirname(__FILE__) .'/docs/';
+	$path = $docpath . $table;
+	$ext = '.serial';
+	file_put_contents($path . $ext, serialize(csv_to_array($path . '.csv')));
+}, $files);
 
-//$array = select_product("Chaise");
-//while (($row = mysqli_fetch_assoc($array)) != NULL)
-//	print_r($row);
-//echo "========================\n";
-//$array = select_all_category_products("3");
-//while (($row = mysqli_fetch_assoc($array)) != NULL)
-//	print_r($row);
-//echo "========================\n";
-//$array = select_all_product_categories("5");
-//while (($row = mysqli_fetch_assoc($array)) != NULL)
-//	print_r($row);
+include('auth.php');
+create_user('root', 'root', 1);
+create_user('lucas', 'lucas', 1);
+create_user('laurent', 'laurent', 1);
+modif_user('laurent', 'laurent', 'loulou', 1);
 
+create_product('caniche', 'http://www.chiens-de-france.com/photo/chiens/2010_06/chiens-Caniche-229eb461-2a2a-b254-6d90-7dbb42656f95.jpg', 'ceci n\'est pas un canif', '100');
+create_product('canif', 'http://www.prixcanon.fr/1813-thickbox/canif-pliant-pince-a-billet-herbertz-noir-araignee-manche-65-cm.jpg', 'ceci n\'est pas un caniche', '12');
+create_product('file dentaire', 'http://www.papilli.fr/77-196-large/papilli-flosser-.jpg', 'c\'est un bon file dentaire', '1.02');
+create_product('coupe-oeuf', 'https://media.mathon.fr/Images/Produitsv2/Amazon/27005_0_1_-Coupe-oeuf-coque.jpg', 'uniquement par le petit bout', '42');
+modif_product('voiture', 'fusee', 'on ne dirait pas mais c\'est une fusée', '', '');
 
-//echo "========================\n";
-//$array = table_fields("Products");
-//foreach ($array as $field)
-//	echo "$field\n";
+create_category('manger');
+modif_category('superflu', 'top cool');
+delete_category('ewfwef');
 
+create_link('manger', 'coupe-oeuf');
 
-
-
-
-
-
-
-
-
-
-////$elt1 = "ca";
-////$str = "salut $elt1 va?";
-////echo $str;
-
-//$conn = mysqli_connect("localhost", "username", "password", "rushDB");
-//if (!$conn) {
-//	die("Connection failed: " . mysqli_connect_error()) . "\n";
-//}
-//
-//$name = "Allumette";
-//$img_path = "/img/allumette.png";
-//$price = "0.05";
-//
-//$sql = 'INSERT INTO Products (name, img_path, price) VALUES ("$name", "$img_path", "$price");';
-//$sql = preg_replace_callback('#\"(\$[^\"]*)\"#u', function ($matches) {
-//	return ("mysqli_real_escape_string(" . '$conn' .", $matches[1])");
-//},	$sql);
-//$sql = "\"" . $sql . "\"";
-//echo $sql;
-//eval(" echo \"RESULT = \" . $sql . \"\n\";");
-
-////if (($array = mysqli_query($conn, $sql)) != NULL) {
-////	echo "Successfully selected\n";
-////} else {
-////	echo "Error : " . mysqli_error($conn);
-////}
-////
-////mysqli_close($conn);
-////
-////while (($row = mysqli_fetch_assoc($array)) != NULL) {
-////	print_r($row);
-////}
-//
-//?>
+?>

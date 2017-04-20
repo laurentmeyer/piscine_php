@@ -1,0 +1,22 @@
+body 
+{
+	width: 100%;
+	background-color:white;
+	margin: 0;
+	font-family: Sans-serif;
+}
+
+.admintable
+{
+	border: 2px solid rgb(180, 41, 54);
+}
+
+.admintable tr th
+{
+	border: 2px solid rgb(180, 41, 54);
+}
+
+.admintable tr td
+{
+	border: 2px solid rgb(180, 41, 54);
+}

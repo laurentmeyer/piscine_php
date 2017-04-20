@@ -1,26 +1,31 @@
 <?php
 
+date_default_timezone_set("Europe/Paris");
+include('data.php');
+
 function auth($login, $passwd)
 {
-	$conn = mysqli_connect("localhost", "username", "password", "rushDB");
-	if (!$conn)
-		return(mysqli_connect_error());
+	global $hashalgo;
+	if ($login == NULL || $passwd == NULL)
+			return (FALSE);
+	
+	$passwd = hash($hashalgo, $passwd);
+	$users = get_all_users();
+	
+	foreach ($users as $key => $value)
+		if ($value['login'] == $login && $value['passwd'] == $passwd)
+			return (TRUE);
+	
+	return (FALSE);
+}
 
-	$login = mysqli_real_escape_string($conn, $login);
-	$passwd = hash("whirlpool", $passwd);
-	$sql = "SELECT *
-		FROM Users
-		WHERE Users.login='" . $login . "'";
-
-	if (($array = mysqli_query($conn, $sql)) == NULL
-		|| ($row = mysqli_fetch_assoc($array)) == NULL) {
-			$ret = FALSE;
-		} else {
-			$ret = ($row['passwd'] == $passwd);
-		}
-
-	mysqli_close($conn);
-	return ($ret);
+function is_admin($login)
+{
+	$users = get_all_users();
+	foreach ($users as $value)
+		if ($value['login'] == $login && $value['admin'] == 1)
+			return (TRUE);
+	return (FALSE);
 }
 
 ?>

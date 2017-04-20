@@ -1,70 +1,74 @@
 <?php
 session_start();
-include ("db_selects.php");
 if ($_SESSION['loggued_on_user']) {
-  $user = $_SESSION['loggued_on_user'];
+	$user = $_SESSION['loggued_on_user'];
 } else {
-  $user = "Se connecter";
+	$user = "Se connecter";
 }
-if ($_GET['add_elem']) {
-  $_SESSION['cart'][$_GET['add_elem']] += 1;
-}
-$categorie = select_all_categories();
+include 'auth.php';
+$categories_products = get_table('categories_products');
+$categories = get_all_categories();
+if (!$select)
+	$select = "";
 ?>
-<html lang="fr">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="stylesheet.css">
+	<link rel="stylesheet" media="screen" type="text/css" title="Design" href="css/style.css"/>
+	<title>Mini-shop</title>
 </head>
 <body>
-  <div class="logo">
-    <img src="img/home-supermarket.gif">
-  </div>
-  <div class="menu">
-    <div class="categorie">
-      <form action="index.php">
-        Categorie :
-        <select name="categorie">
-          <?php
-          while (($row = mysqli_fetch_assoc($categorie)) != NULL) {
-            echo "<option class='text' value=".$row['id'].">".$row['name']."</option>";
-          }
-          ?>
-        </select>
-        <input type="submit" name="submit" value="Valider"/>
-      </form>
-    </div>
-    <div class="cart">
-      <a href="panier.php" name="login">Panier <?php echo "(0)"; ?></a>
-    </div>
-    <div class="login">
-      <?php
-      if ($user == "Se connecter") {
-        echo "<form action='login.php' name='index.php' method='post' autocomplete='off'>
-    			Identifiant: <input type='text' name='login'/>
-    			Mot de passe: <input type='password' name='passwd'/>
-    			<input type='submit' name='submit' value='Connecter'/>
-    		</form><a href='create.html' name='create'>Creer un compte</a>";
-      }else{
-        echo "<a href='modif.html' name='login'>Modifier son compte ".$user."</a>
-      <a href='logout.php' name='logout'>Se deconnecter</a>";
-      }
-      ?>
-    </div>
-  </div>
-  <div>
-    <?php
-    $array = select_all_products();
-    while (($row = mysqli_fetch_assoc($array)) != NULL) {
-      echo "<div class='product'>
-              <div name='".$row['name']."'><img class='picture' src=\"".$row['img_path']."\" name='".$row['name']."'></div>
-              <div class='name' name='".$row['name']."'>".$row['name']."</div>
-              <div class='def' name='".$row['name']."'>".$row['description']."</div>
-              <div><form action='index.php'><button class='add_cart' type='submit' name='add_elem' value='".$row['id']."'>Ajouter au panier</button></form></div>
-              <div class='price' name='".$row['name']."'>".$row['price']."</div>
-            </div>";
-    }
-    ?>
-  </div>
+	<div id = "categories">
+		<div id = "fondcategories"><h2>Categories</h2></div>
+		<?php
+		foreach ($categories as $key)
+			echo '<a class = "selectcat" href="index.php?select='.$key['name'].'"><p>'.$key['name'];'</p></a>';
+		?>
+	</div>
+	<div id = "header">
+		<h1><a href ="index.php" id="minishop">Mini-shop</a></h1>
+		<div id = "menu1">
+			<?php
+					if ($user == $_SESSION['loggued_on_user'])
+						echo '<div class = "menu2"><a href="modif.php">My Account</a></div>';
+			?>
+			<div class = "menu2">
+				<?php
+					if ($_SESSION['loggued_on_user'])
+						echo '<a href="logout.php">Log-out</a>';
+					else
+						echo '<a href="login.php">Login</a>';
+				?>
+			</div>
+			
+				<?php
+					if ($user == "Se connecter")
+						echo '<div class = "menu2"><a href="create.php">Register</a></div>';
+				?>
+			<div class = "menu3"><?php echo '<a href="cart.php">Mon panier('
+			.get_products_number_cart($_COOKIE['cart']).')</a>';?></div>
+			<?php
+				if ($_SESSION['loggued_on_user'] && is_admin($user))
+				{
+					echo '<div class = "menu2"><a href="admin/">Admin</a></div>';
+				}
+			?>
+		</div>
+	</div>
+	<div id = "center">
+		<?php
+		$products = products_of_category($_GET['select']);
+		foreach($products as $c)
+			echo 
+			'<div class = "item"><div class = "item_bis">
+			<img class ="imgprod" src= "'.$c[img_path].'"></img>
+			<p>'.$c['name'].' '.$c['price'].' $</p>
+			<form action= "cart.php?addproduct='.$c['name'].'">
+				<input type="hidden" name="productname" value="'.$c['name'].'" />
+				<input  class="ajouter" type="submit" name="panier" value="Ajouter">
+			</form>
+			</div>
+			</div>';
+		?>
+	</div>
 </body>
 </html>

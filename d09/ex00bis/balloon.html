@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Le ballon le ballon</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="balloon"></div>
+		<script>
+
+function refresh_balloon (elt, r, c) {
+	$(elt).css("height", 2 * r + 'px');
+	$(elt).css("width", 2 * r + 'px');
+	$(elt).css("border-radius", r + 'px');
+	$(elt).css("background-color", colorArray[c]);
+}
+
+var radius = 100;
+var color = 0;
+var colorArray = ["red", "green", "blue"];
+
+$(document).ready(function () {
+
+	refresh_balloon($("#balloon"), radius, color);
+
+	$("#balloon").on({
+		click: function () {
+			radius = (2 * radius > 420) ? 100 : radius + 5;
+			color = (color == colorArray.length - 1) ? 0 : color + 1;
+			refresh_balloon(this, radius, color);
+		},
+		mouseleave: function () {
+			if (radius > 100)
+				radius -= 2.5;
+			color = (color == 0) ? colorArray.length - 1 : color - 1;
+			refresh_balloon(this, radius, color);
+		}
+	});
+
+});
+
+		</script>
+	</body>
+</html>

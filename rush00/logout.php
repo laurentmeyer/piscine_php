@@ -1,6 +1,8 @@
 <?php
-header("refresh:3; url=index.php");
+
 session_start();
+date_default_timezone_set("Europe/Paris");
+
 $_SESSION['loggued_on_user'] = "";
-echo "Au revoir !\n";
+header("Location: index.php");
 ?>

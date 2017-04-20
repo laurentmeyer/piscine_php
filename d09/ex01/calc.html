@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Calculetterice</title>
+	</head>
+	<body>
+		<form>
+		Left side = <input type="text" name="left" id="left">
+		<select name="operator" id="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="/">/</option>
+			<option value="*">*</option>
+			<option value="%">%</option>
+		</select>
+		Right side = <input type="text" name="right" id="right">
+		<input id="tryme" type="submit" value="Try me!">
+		</form>
+		<script>
+
+setInterval(function () { alert('Please, use me!'); }, 30000);
+
+elt = document.getElementById('tryme');
+
+var validOperand = function(value) {
+	var ret;
+
+	if (/^(\-|\+)?([0-9]+)$/.test(value) && (ret = Number(value)) >= 0) {
+		return ret;
+	} else {
+		return false;
+	}
+}
+
+elt.onclick = function () {
+	var operator;
+	var operand1;
+	var operand2;
+	var res;
+
+	operator = document.getElementById('operator').value;
+	operand1 = validOperand(document.getElementById('left').value);
+	operand2 = validOperand(document.getElementById('right').value);
+
+	if (operand1 === false || operand2 === false) {
+		alert('Error :(');
+		console.log('Error :(');
+	} else if ( (operator == "/" || operator == "%") && operand2 == 0) {
+		alert('It\'s over 9000!');
+		console.log('It\'s over 9000!');
+	} else {
+		alert((res = eval(operand1 + operator + operand2)));
+		console.log(res);
+	}
+};
+		</script>
+	</body>
+</html>

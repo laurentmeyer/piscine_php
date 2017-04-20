@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Calculetterice</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<form>
+		Left side = <input type="text" name="left" id="left">
+		<select name="operator" id="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="/">/</option>
+			<option value="*">*</option>
+			<option value="%">%</option>
+		</select>
+		Right side = <input type="text" name="right" id="right">
+		<input id="tryme" type="submit" value="Try me!">
+		</form>
+		<script>
+
+var validOperand = function(value) {
+	var ret;
+
+	if (/^(\-|\+)?([0-9]+)$/.test(value) && (ret = Number(value)) >= 0) {
+		return ret;
+	} else {
+		return false;
+	}
+}
+
+function calculette_this (operand1, operator, operand2) {
+	var res;
+
+	operator = operator.val();
+	operand1 = validOperand(operand1.val());
+	operand2 = validOperand(operand2.val());
+
+	if (operand1 === false || operand2 === false) {
+		alert('Error :\(');
+		console.log('Error :\(');
+	} else if ( (operator == "/" || operator == "%") && operand2 == 0) {
+		alert('It\'s over 9000!');
+		console.log('It\'s over 9000!');
+	} else {
+		alert((res = eval(operand1 + operator + operand2)));
+		console.log(res);
+	}
+};
+
+
+setInterval(function () { alert('Please, use me!'); }, 30000);
+
+$(document).ready(function () {
+	$("#tryme").click(function () {
+		calculette_this($("#left"), $("#operator"), $("#right"));
+	} );
+});
+
+
+		</script>
+	</body>
+</html>
